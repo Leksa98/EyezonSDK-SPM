@@ -16,22 +16,28 @@ public enum ServerArea: String {
 }
 
 public class EyezonSDK {
-    private let area: ServerArea
+    static let instance = EyezonSDK()
+    private var socketService: BaseSocketService?
     
-    init(
+    private init() { }
+    
+    public func initSdk(
         area: ServerArea
     ) {
-        self.area = area
+        socketService = SocketServiceProvider().getInstance()
+        Storage.shared.setCurrentServer(area)
     }
+    
     
     /// Method for providing FCM token to Eyezon
     public func updateFCM(_ token: String) {
-        
+        Storage.shared.setFCMToken(token)
     }
     
     /// Method for opening EyezonWebView
     /// return UIViewController in which webView embedded
     public func openButton(data: EyezonSDKData, broadcastReceiver: EyezonBroadcastReceiver) -> UIViewController {
+        socketService?.broadcastReceiver = broadcastReceiver
         return EyezonAssembly.viewController(with: data, and: broadcastReceiver)
     }
 }

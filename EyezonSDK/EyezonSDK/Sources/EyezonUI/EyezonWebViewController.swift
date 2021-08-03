@@ -39,11 +39,22 @@ class EyezonWebViewController: UIViewController {
         }
         let urlRequest = URLRequest(url: url)
         eyezonWebView.load(urlRequest)
+        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
+        let script = WKUserScript(source: source, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        eyezonWebView.configuration.userContentController.addUserScript(script)
+        // register the bridge script that listens for the output
+        eyezonWebView.configuration.userContentController.add(self, name: "logHandler")
     }
 }
 
 extension EyezonWebViewController: WKUIDelegate {
     func webViewDidClose(_ webView: WKWebView) {
-        
+        webView.evaluateJavaScript("javascript:eyeZon('leaveDialog')")
+    }
+}
+
+extension EyezonWebViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print(message.body)
     }
 }
