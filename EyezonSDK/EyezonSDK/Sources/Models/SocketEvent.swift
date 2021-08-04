@@ -29,7 +29,7 @@ struct EnterSocketEvent: OutcomingSocketEvent {
 }
 
 /// Analytics event
-struct AnalyticsEvent {
+enum AnalyticEvents {
     static let EVENT_INIT_SDK = "init_sdk"
 }
 

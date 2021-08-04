@@ -16,7 +16,7 @@
 		F33180A126B89C340081273D /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A026B89C340081273D /* Attachment.swift */; };
 		F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A226B8A1330081273D /* EyezonSDKData.swift */; };
 		F33180A826B8A3630081273D /* EyezonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A726B8A3630081273D /* EyezonWebViewController.swift */; };
-		F33180AA26B8A3A60081273D /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A926B8A3A60081273D /* Assembly.swift */; };
+		F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A926B8A3A60081273D /* EyezonAssembly.swift */; };
 		F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335564926B9E58300F4EE39 /* SocketEvent.swift */; };
 		F335564D26B9E9D900F4EE39 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335564C26B9E9D900F4EE39 /* SocketService.swift */; };
 		F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = F335564F26B9EAC900F4EE39 /* SocketIO */; };
@@ -28,6 +28,11 @@
 		F335565C26B9F5AB00F4EE39 /* SocketServiceUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */; };
 		F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */; };
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
+		F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32EFE26BB2B580001684A /* SwiftyJSON */; };
+		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
+		F3A32F0426BB3E210001684A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3A32F0326BB3E210001684A /* GoogleService-Info.plist */; };
+		F3A32F0726BB3F410001684A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0626BB3F410001684A /* FirebaseAnalytics */; };
+		F3A32F0926BB3F410001684A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0826BB3F410001684A /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +47,7 @@
 		F33180A026B89C340081273D /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		F33180A226B8A1330081273D /* EyezonSDKData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonSDKData.swift; sourceTree = "<group>"; };
 		F33180A726B8A3630081273D /* EyezonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewController.swift; sourceTree = "<group>"; };
-		F33180A926B8A3A60081273D /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		F33180A926B8A3A60081273D /* EyezonAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonAssembly.swift; sourceTree = "<group>"; };
 		F335564926B9E58300F4EE39 /* SocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
 		F335564C26B9E9D900F4EE39 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		F335565126B9F41700F4EE39 /* BaseSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSocketService.swift; sourceTree = "<group>"; };
@@ -53,6 +58,8 @@
 		F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceUs.swift; sourceTree = "<group>"; };
 		F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceProvider.swift; sourceTree = "<group>"; };
 		F335566026B9F97900F4EE39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewPresenter.swift; sourceTree = "<group>"; };
+		F3A32F0326BB3E210001684A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +67,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A32F0926BB3F410001684A /* FirebaseMessaging in Frameworks */,
+				F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */,
 				F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */,
+				F3A32F0726BB3F410001684A /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +106,7 @@
 		F331809226B895C60081273D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F3A32F0326BB3E210001684A /* GoogleService-Info.plist */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
 				F335564B26B9E9CA00F4EE39 /* Socket */,
 				F331809D26B89BFB0081273D /* Protocols */,
@@ -141,7 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				F33180A726B8A3630081273D /* EyezonWebViewController.swift */,
-				F33180A926B8A3A60081273D /* Assembly.swift */,
+				F33180A926B8A3A60081273D /* EyezonAssembly.swift */,
+				F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */,
 			);
 			path = EyezonUI;
 			sourceTree = "<group>";
@@ -197,6 +209,9 @@
 			name = EyezonSDK;
 			packageProductDependencies = (
 				F335564F26B9EAC900F4EE39 /* SocketIO */,
+				F3A32EFE26BB2B580001684A /* SwiftyJSON */,
+				F3A32F0626BB3F410001684A /* FirebaseAnalytics */,
+				F3A32F0826BB3F410001684A /* FirebaseMessaging */,
 			);
 			productName = EyezonSDK;
 			productReference = F331808726B894F30081273D /* EyezonSDK.framework */;
@@ -227,6 +242,8 @@
 			mainGroup = F331807D26B894F30081273D;
 			packageReferences = (
 				F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */,
+				F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F331808826B894F30081273D /* Products */;
 			projectDirPath = "";
@@ -242,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A32F0426BB3E210001684A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */,
-				F33180AA26B8A3A60081273D /* Assembly.swift in Sources */,
+				F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */,
 				F331809A26B899700081273D /* Date+Additions.swift in Sources */,
 				F335566126B9F97900F4EE39 /* Storage.swift in Sources */,
 				F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */,
@@ -270,6 +288,7 @@
 				F331809F26B89C0B0081273D /* EyezonBroadcastReceiver.swift in Sources */,
 				F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */,
 				F33180A126B89C340081273D /* Attachment.swift in Sources */,
+				F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */,
 				F331809726B898180081273D /* EyezonMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +435,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.EyezonSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -442,6 +462,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.EyezonSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -482,6 +503,22 @@
 				minimumVersion = 16.0.1;
 			};
 		};
+		F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -489,6 +526,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */;
 			productName = SocketIO;
+		};
+		F3A32EFE26BB2B580001684A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F3A32F0626BB3F410001684A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F3A32F0826BB3F410001684A /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

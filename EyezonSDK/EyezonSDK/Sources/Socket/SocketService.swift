@@ -17,21 +17,31 @@ private enum Constants {
 class BaseSocketServiceImpl: BaseSocketService {
     private var hasListeners = false
     private var options: SocketIOClientConfiguration {
-        return SocketIOClientConfiguration(arrayLiteral: .forcePolling(true), .forceWebsockets(true))
+        return SocketIOClientConfiguration(
+            arrayLiteral: .compress, .forceWebsockets(true), .forcePolling(true), .version(.two)
+        )
     }
-    private var manager: SocketManager {
-        return SocketManager(socketURL: makeBaseUrl(), config: options)
-    }
-    private var socketIo: SocketIOClient {
-        manager.defaultSocket
-    }
+    private var manager: SocketManager!
+    private var socketIo: SocketIOClient!
     weak var broadcastReceiver: EyezonBroadcastReceiver?
     
     func makeBaseUrl() -> URL {
         return URL(string: "")!
     }
     
+    private func initSocket() {
+        guard manager == nil else {
+            return
+        }
+        manager = SocketManager(
+            socketURL: makeBaseUrl(),
+            config: options
+        )
+        socketIo = manager.defaultSocket
+    }
+    
     func connect() {
+        initSocket()
         guard !isConnected() else {
             return
         }
@@ -42,7 +52,9 @@ class BaseSocketServiceImpl: BaseSocketService {
     func enterSocket() {
         let userId = Storage.shared.getClientId()
         if !userId.isEmpty {
-            emitEvent(emitEvent: EnterSocketEvent(userId: userId))
+            emitEvent(
+                emitEvent: EnterSocketEvent(userId: userId)
+            )
         }
     }
     
@@ -61,7 +73,10 @@ class BaseSocketServiceImpl: BaseSocketService {
         guard let enterSocketEvent = emitEvent as? EnterSocketEvent else {
             return
         }
-        socketIo.emit(SocketServiceConstants.SOCKET_O_CONNECT_TO.rawValue, enterSocketEvent.userId)
+        socketIo.emit(
+            SocketServiceConstants.SOCKET_O_CONNECT_TO.rawValue,
+            enterSocketEvent.userId
+        )
     }
     
     private func addListeners() {

@@ -14,14 +14,14 @@ public enum MessageType: String, Codable, Hashable {
 
 public class EyezonMessage: Codable {
     var _id: String = .empty
-    let createdAt: Int64
-    let userId: String
+    let createdAt: String
+    let user: String
     var messageText: String?
     let attachment: Attachment?
     let type: MessageType
     let dialog: String
 //    var voiceData: (Bool, Float, [Data]) = (false, .zero, []) !! ask about what is it
-    var isLoading: Bool
+    var isLoading: Bool?
     var isRead: Bool
     var isDeleted: Bool
     

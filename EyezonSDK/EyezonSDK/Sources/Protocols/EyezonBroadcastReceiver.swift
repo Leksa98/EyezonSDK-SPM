@@ -28,5 +28,5 @@ public protocol EyezonBroadcastReceiver: AnyObject {
     func onDialogReturned(dialogId: String)
     
     /// Event for indicating other console events
-    func onConsoleEvent(eventName: String, event: String)
+    func onConsoleEvent(eventName: String, event: [String: Any])
 }

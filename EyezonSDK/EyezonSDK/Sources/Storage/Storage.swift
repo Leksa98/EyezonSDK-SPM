@@ -51,4 +51,8 @@ final class Storage {
         let areaString = userDefaults.string(forKey: Keys.eyezonCurrentServer.rawValue) ?? .empty
         return ServerArea(rawValue: areaString) ?? .russia
     }
+    
+    func getFCMToken() -> String? {
+        return userDefaults.string(forKey: Keys.eyezonFCMToken.rawValue)
+    }
 }
