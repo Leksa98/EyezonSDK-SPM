@@ -25,10 +25,7 @@ final class EyezonWebViewController: UIViewController {
     var presenter: EyezonWebViewPresenter!
 
     // MARK: - Lifecycle
-    deinit {
-        print(#function)
-    }
-    
+   
     init(
         widgetUrl: String,
         broadcastReceiver: EyezonBroadcastReceiver?
@@ -70,12 +67,12 @@ final class EyezonWebViewController: UIViewController {
         super.viewWillDisappear(animated)
         observable?.invalidate()
         observable = nil
-        eyezonWebView.evaluateJavaScript("javascript:eyeZon('leaveDialog')")
+        eyezonWebView.evaluateJavaScript(EyezonJSConstants.leaveDialog)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        removeFromParent()
+        presenter.webViewClose()
     }
     
     // MARK: - Private methods
@@ -91,22 +88,16 @@ final class EyezonWebViewController: UIViewController {
     
     private func injectingScripts() {
         /// For listening console events
-        let source = "function captureLog(msg) { window.webkit.messageHandlers.logHandler.postMessage(msg); } window.console.log = captureLog;"
         let script = WKUserScript(
-            source: source,
+            source: EyezonJSConstants.listeningConsoleEvents,
             injectionTime: .atDocumentEnd,
             forMainFrameOnly: false
         )
         
         /// For disabling zoom-in
         /// https://developer.apple.com/forums/thread/111183
-        let sourceForZoomDisable = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" +
-            "head.appendChild(meta);"
         let scriptZoomDisable = WKUserScript(
-            source: sourceForZoomDisable,
+            source: EyezonJSConstants.sourceForZoomDisable,
             injectionTime: .atDocumentEnd,
             forMainFrameOnly: true
         )
@@ -140,8 +131,8 @@ extension EyezonWebViewController: WKScriptMessageHandler {
 // MARK: - EyezonWebViewProtocol
 extension EyezonWebViewController: EyezonWebViewProtocol {
     func showError(with message: String) {
-        let alertVC = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
+        let alertVC = UIAlertController(title: "unknownError".localizedFromJSON, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok".localizedFromJSON, style: .default, handler: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         })
         alertVC.addAction(okAction)

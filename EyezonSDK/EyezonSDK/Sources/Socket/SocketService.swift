@@ -29,6 +29,10 @@ class BaseSocketServiceImpl: BaseSocketService {
         return URL(string: "")!
     }
     
+    init() {
+        initSocket()
+    }
+    
     private func initSocket() {
         guard manager == nil else {
             return
@@ -60,9 +64,9 @@ class BaseSocketServiceImpl: BaseSocketService {
     
     func disconnect() {
         SocketServiceConstants.allCases.forEach { constant in
-            socketIo.off(constant.rawValue)
+            socketIo?.off(constant.rawValue)
         }
-        socketIo.disconnect()
+        socketIo?.disconnect()
     }
     
     func isConnected() -> Bool {

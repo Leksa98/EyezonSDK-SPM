@@ -10,18 +10,22 @@ import Foundation
 public class EyezonSDKData {
     let businessId: String
     let buttonId: String
-    let widgetUrl: String
-    var fcmToken: String = ""
+    let widgetUrl: String?
+    private var fcmToken: String? {
+        Storage.shared.getFCMToken()
+    }
     private let application = "IOSSDK"
     
     var validUrl: String {
-        "\(widgetUrl)&businessId=\(businessId)&buttonId=\(buttonId)&application=\(application)"
+        var validUrlString = "\(widgetUrl ?? UrlConstants.DEFAULT_WIDGET_URL)&businessId=\(businessId)&buttonId=\(buttonId)&application=\(application)"
+        validUrlString.safeAppendToUrl(fcmToken, fieldName: "fcmToken")
+        return validUrlString
     }
     
     public init(
         businessId: String,
         buttonId: String,
-        widgetUrl: String
+        widgetUrl: String? = nil
     ) {
         self.businessId = businessId
         self.buttonId = buttonId

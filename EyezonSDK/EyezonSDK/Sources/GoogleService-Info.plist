@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>145317142740-9vrd7fq3bgb7mti9qbima1acvvoai8a9.apps.googleusercontent.com</string>
+	<string>145317142740-58n3vqdc0km1phvidrt31lpjtqqlc0k2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.145317142740-9vrd7fq3bgb7mti9qbima1acvvoai8a9</string>
+	<string>com.googleusercontent.apps.145317142740-58n3vqdc0km1phvidrt31lpjtqqlc0k2</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDTmpWR4fvPTXmmq85l8yFuRb6R5UsDHe4</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.eyezon.EyezonSDK</string>
+	<string>com.eyezon.sdk</string>
 	<key>PROJECT_ID</key>
 	<string>eyezon-business-sdk</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:145317142740:ios:40a3698508dd6d27cf9b41</string>
+	<string>1:145317142740:ios:3be7e3cb9ed63a67cf9b41</string>
 	<key>DATABASE_URL</key>
 	<string>https://eyezon-business-sdk.firebaseio.com</string>
 </dict>

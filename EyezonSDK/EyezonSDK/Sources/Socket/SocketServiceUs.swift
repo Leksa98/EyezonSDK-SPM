@@ -10,8 +10,9 @@ import Foundation
 final class SocketServiceUs: BaseSocketServiceImpl {
     static let instance = SocketServiceUs()
     
-    private override init() { }
-    
+    private override init() {
+        super.init()
+    }
     override func makeBaseUrl() -> URL {
         return URL(string: UrlConstants.RELEASE_BASE_URL_US)!
     }

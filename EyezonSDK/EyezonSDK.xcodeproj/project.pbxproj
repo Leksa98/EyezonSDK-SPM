@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31EDA7C26BDB81D00CF6D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */; };
 		F331808C26B894F30081273D /* EyezonSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = F331808A26B894F30081273D /* EyezonSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F331809426B8964A0081273D /* EyezonSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809326B8964A0081273D /* EyezonSDK.swift */; };
 		F331809726B898180081273D /* EyezonMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809626B898180081273D /* EyezonMessage.swift */; };
@@ -30,12 +31,16 @@
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
 		F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32EFE26BB2B580001684A /* SwiftyJSON */; };
 		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
-		F3A32F0426BB3E210001684A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3A32F0326BB3E210001684A /* GoogleService-Info.plist */; };
 		F3A32F0726BB3F410001684A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0626BB3F410001684A /* FirebaseAnalytics */; };
 		F3A32F0926BB3F410001684A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0826BB3F410001684A /* FirebaseMessaging */; };
+		F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */; };
+		F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */; };
+		F3F4B8A726BC9B180085EE80 /* EyezonMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */; };
+		F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F331808726B894F30081273D /* EyezonSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EyezonSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F331808A26B894F30081273D /* EyezonSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EyezonSDK.h; sourceTree = "<group>"; };
 		F331808B26B894F30081273D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +64,10 @@
 		F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceProvider.swift; sourceTree = "<group>"; };
 		F335566026B9F97900F4EE39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewPresenter.swift; sourceTree = "<group>"; };
-		F3A32F0326BB3E210001684A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConstants.swift; sourceTree = "<group>"; };
+		F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonMessaging.swift; sourceTree = "<group>"; };
+		F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonJSConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +114,8 @@
 		F331809226B895C60081273D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F3A32F0326BB3E210001684A /* GoogleService-Info.plist */,
+				F3F4B8A526BC9B0E0085EE80 /* Messaging */,
+				F3F4B89B26BC84A00085EE80 /* Localization */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
 				F335564B26B9E9CA00F4EE39 /* Socket */,
 				F331809D26B89BFB0081273D /* Protocols */,
@@ -114,6 +123,7 @@
 				F331809526B8980E0081273D /* Models */,
 				F33180A426B8A2D80081273D /* EyezonUI */,
 				F331809326B8964A0081273D /* EyezonSDK.swift */,
+				F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -135,6 +145,8 @@
 				F331809926B899700081273D /* Date+Additions.swift */,
 				F331809B26B899CE0081273D /* String+Additions.swift */,
 				F335565526B9F53F00F4EE39 /* UrlConstants.swift */,
+				F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */,
+				F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -177,6 +189,22 @@
 				F335566026B9F97900F4EE39 /* Storage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F3F4B89B26BC84A00085EE80 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		F3F4B8A526BC9B0E0085EE80 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */,
+			);
+			path = Messaging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A32F0426BB3E210001684A /* GoogleService-Info.plist in Resources */,
+				F31EDA7C26BDB81D00CF6D60 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +301,7 @@
 				F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */,
 				F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */,
 				F331809A26B899700081273D /* Date+Additions.swift in Sources */,
+				F3F4B8A726BC9B180085EE80 /* EyezonMessaging.swift in Sources */,
 				F335566126B9F97900F4EE39 /* Storage.swift in Sources */,
 				F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */,
 				F335565426B9F4F700F4EE39 /* SocketServiceSandbox.swift in Sources */,
@@ -281,14 +310,17 @@
 				F331809426B8964A0081273D /* EyezonSDK.swift in Sources */,
 				F335564D26B9E9D900F4EE39 /* SocketService.swift in Sources */,
 				F331809C26B899CE0081273D /* String+Additions.swift in Sources */,
+				F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */,
 				F335565C26B9F5AB00F4EE39 /* SocketServiceUs.swift in Sources */,
 				F335565226B9F41700F4EE39 /* BaseSocketService.swift in Sources */,
 				F335565826B9F59A00F4EE39 /* SocketServiceRu.swift in Sources */,
+				F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */,
 				F335565626B9F53F00F4EE39 /* UrlConstants.swift in Sources */,
 				F331809F26B89C0B0081273D /* EyezonBroadcastReceiver.swift in Sources */,
 				F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */,
 				F33180A126B89C340081273D /* Attachment.swift in Sources */,
 				F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */,
+				F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */,
 				F331809726B898180081273D /* EyezonMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +468,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC ";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.EyezonSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -463,7 +495,7 @@
 					"@loader_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC ";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.EyezonSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

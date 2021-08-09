@@ -23,6 +23,9 @@ protocol EyezonWebViewPresenter: AnyObject {
     
     /// Map console events
     func mapConsoleEvent(_ value: Any) -> (eventName: String, eventData: [String: Any])
+    
+    /// Connect to sockets because we leaving webview
+    func webViewClose()
 }
 
 final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
@@ -38,6 +41,7 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     private var timer: Timer?
     private var buttonClickedReceived = false
     private var chatJoinedReceived = false
+    private let socketService = SocketServiceProvider().getInstance()
     
     // MARK: - Public properties
     weak var view: EyezonWebViewProtocol?
@@ -49,6 +53,7 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     
     // MARK: - Public methods
     func webViewLoaded() {
+        socketService.disconnect()
         timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
             self?.view?.showError(with: "")
             timer.invalidate()
@@ -78,6 +83,10 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
             eyezonDidLoad()
         }
         return (eventName, eventDictionary)
+    }
+    
+    func webViewClose() {
+        socketService.connect()
     }
     
     // MARK: - Private methods

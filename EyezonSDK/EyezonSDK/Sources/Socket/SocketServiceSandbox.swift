@@ -10,7 +10,9 @@ import Foundation
 final class SocketServiceSandbox: BaseSocketServiceImpl {
     static let instance = SocketServiceSandbox()
     
-    private override init() { }
+    private override init() {
+        super.init()
+    }
     
     override func makeBaseUrl() -> URL {
         return URL(string: UrlConstants.DEBUG_BASE_URL)!

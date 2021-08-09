@@ -15,10 +15,6 @@ final class EyezonAssembly {
         with data: EyezonSDKData,
         and broadcastReceiver: EyezonBroadcastReceiver?
     ) -> UIViewController {
-        var validUrl = data.validUrl
-        if let fcmToken = Storage.shared.getFCMToken() {
-            validUrl.append("&fcmToken=\(fcmToken)")
-        }
         let viewController = EyezonWebViewController(widgetUrl: data.validUrl, broadcastReceiver: broadcastReceiver)
         let presenter = EyezonWebViewPresenterImpl(with: viewController)
         viewController.presenter = presenter
