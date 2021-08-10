@@ -31,11 +31,8 @@
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
 		F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32EFE26BB2B580001684A /* SwiftyJSON */; };
 		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
-		F3A32F0726BB3F410001684A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0626BB3F410001684A /* FirebaseAnalytics */; };
-		F3A32F0926BB3F410001684A /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32F0826BB3F410001684A /* FirebaseMessaging */; };
 		F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */; };
 		F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */; };
-		F3F4B8A726BC9B180085EE80 /* EyezonMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */; };
 		F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +63,6 @@
 		F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewPresenter.swift; sourceTree = "<group>"; };
 		F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConstants.swift; sourceTree = "<group>"; };
-		F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonMessaging.swift; sourceTree = "<group>"; };
 		F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonJSConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,10 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3A32F0926BB3F410001684A /* FirebaseMessaging in Frameworks */,
 				F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */,
 				F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */,
-				F3A32F0726BB3F410001684A /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +108,6 @@
 		F331809226B895C60081273D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F3F4B8A526BC9B0E0085EE80 /* Messaging */,
 				F3F4B89B26BC84A00085EE80 /* Localization */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
 				F335564B26B9E9CA00F4EE39 /* Socket */,
@@ -199,14 +192,6 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		F3F4B8A526BC9B0E0085EE80 /* Messaging */ = {
-			isa = PBXGroup;
-			children = (
-				F3F4B8A626BC9B180085EE80 /* EyezonMessaging.swift */,
-			);
-			path = Messaging;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -238,8 +223,6 @@
 			packageProductDependencies = (
 				F335564F26B9EAC900F4EE39 /* SocketIO */,
 				F3A32EFE26BB2B580001684A /* SwiftyJSON */,
-				F3A32F0626BB3F410001684A /* FirebaseAnalytics */,
-				F3A32F0826BB3F410001684A /* FirebaseMessaging */,
 			);
 			productName = EyezonSDK;
 			productReference = F331808726B894F30081273D /* EyezonSDK.framework */;
@@ -271,7 +254,6 @@
 			packageReferences = (
 				F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */,
 				F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F331808826B894F30081273D /* Products */;
 			projectDirPath = "";
@@ -301,7 +283,6 @@
 				F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */,
 				F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */,
 				F331809A26B899700081273D /* Date+Additions.swift in Sources */,
-				F3F4B8A726BC9B180085EE80 /* EyezonMessaging.swift in Sources */,
 				F335566126B9F97900F4EE39 /* Storage.swift in Sources */,
 				F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */,
 				F335565426B9F4F700F4EE39 /* SocketServiceSandbox.swift in Sources */,
@@ -543,14 +524,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.5.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -563,16 +536,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
-		};
-		F3A32F0626BB3F410001684A /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		F3A32F0826BB3F410001684A /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F3A32F0526BB3F410001684A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

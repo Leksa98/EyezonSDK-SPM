@@ -12,9 +12,9 @@ public class EyezonSDKData {
     let buttonId: String
     let widgetUrl: String?
     private var fcmToken: String? {
-        Storage.shared.getFCMToken()
+        Storage.shared.getAPNSToken()
     }
-    private let application = "IOSSDK"
+    private let application = "IOS_SDK"
     
     var validUrl: String {
         var validUrlString = "\(widgetUrl ?? UrlConstants.DEFAULT_WIDGET_URL)&businessId=\(businessId)&buttonId=\(buttonId)&application=\(application)"

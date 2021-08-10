@@ -7,7 +7,6 @@
 
 import UIKit
 import EyezonSDK
-import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerForPushNotifications()
-        EyezonSDK.instance.initEyezonFirebase()
         return true
     }
 
@@ -37,11 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
-        let tokenChars = (deviceToken as NSData).bytes.assumingMemoryBound(to: CChar.self)
-        var tokenString = ""
-        for i in 0..<deviceToken.count {
-            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
-        }
         EyezonSDK.instance.initMessaging(apnsData: deviceToken)
     }
     

@@ -35,7 +35,7 @@ final class Storage {
         userDefaults.set(value.rawValue, forKey: Keys.eyezonCurrentServer.rawValue)
     }
     
-    func setFCMToken(_ value: String) {
+    func setAPNSToken(_ value: String) {
         userDefaults.set(value, forKey: Keys.eyezonFCMToken.rawValue)
     }
     
@@ -52,7 +52,7 @@ final class Storage {
         return ServerArea(rawValue: areaString) ?? .russia
     }
     
-    func getFCMToken() -> String? {
+    func getAPNSToken() -> String? {
         return userDefaults.string(forKey: Keys.eyezonFCMToken.rawValue)
     }
 }
