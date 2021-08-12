@@ -9,11 +9,6 @@ import Foundation
 
 /// Protocol for interacting with eyezon events
 public protocol EyezonBroadcastReceiver: AnyObject {
-    /// Event for indicating that push was received
-    func onPushReceived(
-        title: String,
-        body: String
-    )
     
     /// Event for indicating that new message was received
     func onNewMessage(message: EyezonMessage)

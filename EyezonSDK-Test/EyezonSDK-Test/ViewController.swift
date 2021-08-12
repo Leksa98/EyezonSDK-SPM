@@ -58,10 +58,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EyezonBroadcastReceiver {
-    func onPushReceived(title: String, body: String) {
-        print(#function)
-    }
-    
+   
     func onNewMessage(message: EyezonMessage) {
         print(#function)
     }
