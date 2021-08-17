@@ -50,8 +50,8 @@ class ViewController: UIViewController {
     
     @objc
     private func openEyezon() {
-        EyezonSDK.instance.initSdk(area: selectedServer) { [weak self, predefinedData] in
-            let eyezonWebViewController = EyezonSDK.instance.openButton(data: predefinedData, broadcastReceiver: self)
+        Eyezon.instance.initSdk(area: selectedServer) { [weak self, predefinedData] in
+            let eyezonWebViewController = Eyezon.instance.openButton(data: predefinedData, broadcastReceiver: self)
             self?.navigationController?.pushViewController(eyezonWebViewController, animated: true)
         }
     }

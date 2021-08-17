@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
     ) {
-        EyezonSDK.instance.initMessaging(apnsData: deviceToken)
+        Eyezon.instance.initMessaging(apnsData: deviceToken)
     }
     
     func application(
