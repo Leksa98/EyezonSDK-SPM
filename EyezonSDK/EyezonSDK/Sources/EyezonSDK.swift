@@ -15,8 +15,8 @@ public enum ServerArea: String {
     case usa = "us"
 }
 
-public class EyezonSDK: NSObject {
-    public static let instance = EyezonSDK()
+public class Eyezon: NSObject {
+    public static let instance = Eyezon()
     private var socketService: BaseSocketService?
     weak var broadcastReceiver: EyezonBroadcastReceiver?
     

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+@_implementationOnly import SwiftyJSON
 
 enum LocalizationKeys {
     static let SDK_ALERT_ERROR_TITLE = "SDK_ALERT_ERROR_TITLE"

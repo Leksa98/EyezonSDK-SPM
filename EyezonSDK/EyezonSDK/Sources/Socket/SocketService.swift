@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SocketIO
+@_implementationOnly import  SocketIO
 
 private enum Constants {
     static let DIALOG_ID_FIELD_NAME = "dialogId"

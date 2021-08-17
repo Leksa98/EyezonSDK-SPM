@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftyJSON
+@_implementationOnly import  SwiftyJSON
 
 /// View protocol
 protocol EyezonWebViewProtocol: AnyObject {
