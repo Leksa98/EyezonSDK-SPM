@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     private func openEyezon() {
         Eyezon.instance.initSdk(area: selectedServer) { [weak self, predefinedData] in
             let eyezonWebViewController = Eyezon.instance.openButton(data: predefinedData, broadcastReceiver: self)
-            self?.navigationController?.pushViewController(eyezonWebViewController, animated: true)
+            self?.present(eyezonWebViewController, animated: true, completion: nil)
         }
     }
 }
