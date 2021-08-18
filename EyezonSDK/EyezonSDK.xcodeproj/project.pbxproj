@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F31EDA7C26BDB81D00CF6D60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */; };
+		F31ED00226CD0DF300CC1B1B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31ED00126CD0DF300CC1B1B /* Media.xcassets */; };
 		F331808C26B894F30081273D /* EyezonSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = F331808A26B894F30081273D /* EyezonSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F331809426B8964A0081273D /* EyezonSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809326B8964A0081273D /* EyezonSDK.swift */; };
 		F331809726B898180081273D /* EyezonMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809626B898180081273D /* EyezonMessage.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F31ED00126CD0DF300CC1B1B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F331808726B894F30081273D /* EyezonSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EyezonSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F331808A26B894F30081273D /* EyezonSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EyezonSDK.h; sourceTree = "<group>"; };
 		F331808B26B894F30081273D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				F331809526B8980E0081273D /* Models */,
 				F33180A426B8A2D80081273D /* EyezonUI */,
 				F331809326B8964A0081273D /* EyezonSDK.swift */,
-				F31EDA7B26BDB81D00CF6D60 /* GoogleService-Info.plist */,
+				F31ED00126CD0DF300CC1B1B /* Media.xcassets */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31EDA7C26BDB81D00CF6D60 /* GoogleService-Info.plist in Resources */,
+				F31ED00226CD0DF300CC1B1B /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

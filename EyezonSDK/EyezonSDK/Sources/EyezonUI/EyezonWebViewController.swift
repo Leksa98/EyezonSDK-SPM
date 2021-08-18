@@ -19,7 +19,8 @@ final class EyezonWebViewController: UIViewController {
     }()
     private lazy var closeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        let bundle = Bundle(for: type(of: self))
+        button.setImage(UIImage(named: "Close", in: bundle, with: nil), for: .normal)
         button.addTarget(self, action: #selector(self.close), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .lightGray
