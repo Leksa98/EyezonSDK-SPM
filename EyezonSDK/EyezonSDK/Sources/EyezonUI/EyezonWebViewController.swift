@@ -17,34 +17,15 @@ final class EyezonWebViewController: UIViewController {
         webView.navigationDelegate = self
         return webView
     }()
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
-        let bundle = Bundle(for: type(of: self))
-        button.setImage(UIImage(named: "Close", in: bundle, with: nil), for: .normal)
-        button.addTarget(self, action: #selector(self.close), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .lightGray
-        button.tintColor = .black
-        button.layer.cornerRadius = 12.0
-        return button
-    }()
     private let widgetUrl: String
     private var observable: NSKeyValueObservation?
     private weak var broadcastReceiver: EyezonBroadcastReceiver?
     
     // MARK: - Public properties
     var presenter: EyezonWebViewPresenter!
-    override var modalPresentationStyle: UIModalPresentationStyle {
-        get {
-            return .fullScreen
-        }
-        set { }
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .darkContent
-    }
+    
     // MARK: - Lifecycle
-   
+    
     init(
         widgetUrl: String,
         broadcastReceiver: EyezonBroadcastReceiver?
@@ -61,7 +42,6 @@ final class EyezonWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(eyezonWebView)
-        view.addSubview(closeButton)
         guard let url = URL(string: widgetUrl) else {
             return
         }
@@ -77,10 +57,8 @@ final class EyezonWebViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        observable = eyezonWebView.observe(\.title) { [weak self] webView, _ in
-            self?.navigationItem.title = webView.title
-        }
+        navigationItem.title = "Eyezon"
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -101,11 +79,7 @@ final class EyezonWebViewController: UIViewController {
             eyezonWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             eyezonWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             eyezonWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            eyezonWebView.topAnchor.constraint(equalTo: view.topAnchor),
-            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
-            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            closeButton.widthAnchor.constraint(equalToConstant: 24.0),
-            closeButton.heightAnchor.constraint(equalToConstant: 24.0)
+            eyezonWebView.topAnchor.constraint(equalTo: view.topAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
     }
@@ -130,11 +104,6 @@ final class EyezonWebViewController: UIViewController {
         
         /// register the bridge script that listens for the output
         eyezonWebView.configuration.userContentController.add(self, name: "logHandler")
-    }
-    
-    @objc
-    private func close() {
-        dismiss(animated: true, completion: nil)
     }
 }
 

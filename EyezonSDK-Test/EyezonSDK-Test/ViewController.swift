@@ -48,11 +48,16 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     @objc
     private func openEyezon() {
         Eyezon.instance.initSdk(area: selectedServer) { [weak self, predefinedData] in
             let eyezonWebViewController = Eyezon.instance.openButton(data: predefinedData, broadcastReceiver: self)
-            self?.present(eyezonWebViewController, animated: true, completion: nil)
+            self?.navigationController?.pushViewController(eyezonWebViewController, animated: true)
         }
     }
 }
