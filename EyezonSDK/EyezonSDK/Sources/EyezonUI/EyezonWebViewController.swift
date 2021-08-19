@@ -11,15 +11,22 @@ import WebKit
 final class EyezonWebViewController: UIViewController {
     
     // MARK: - Private properties
-    private lazy var eyezonWebView: WKWebView = {
-        let webView = WKWebView()
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.navigationDelegate = self
-        return webView
+    private var eyezonWebView: WKWebView!
+    private lazy var closeButton: UIButton = {
+        let button = UIButton()
+        let bundle = Bundle(for: type(of: self))
+        button.setImage(UIImage(named: "Close", in: bundle, with: nil), for: .normal)
+        button.addTarget(self, action: #selector(self.close), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .lightGray
+        button.tintColor = .black
+        button.layer.cornerRadius = 12.0
+        return button
     }()
     private let widgetUrl: String
     private var observable: NSKeyValueObservation?
     private weak var broadcastReceiver: EyezonBroadcastReceiver?
+    private var popUpWebView: WKWebView?
     
     // MARK: - Public properties
     var presenter: EyezonWebViewPresenter!
@@ -41,17 +48,13 @@ final class EyezonWebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeWebView()
         view.addSubview(eyezonWebView)
         guard let url = URL(string: widgetUrl) else {
             return
         }
         let urlRequest = URLRequest(url: url)
         eyezonWebView.load(urlRequest)
-        injectingScripts()
-        let preferences = WKWebpagePreferences()
-        preferences.preferredContentMode = .mobile
-        preferences.allowsContentJavaScript = true
-        eyezonWebView.configuration.defaultWebpagePreferences = preferences
         constraintView()
     }
     
@@ -84,7 +87,23 @@ final class EyezonWebViewController: UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-    private func injectingScripts() {
+    private func makeWebView() {
+        let preferences = WKWebpagePreferences()
+        preferences.preferredContentMode = .mobile
+        preferences.allowsContentJavaScript = true
+        let configuration = WKWebViewConfiguration()
+        configuration.allowsInlineMediaPlayback = true
+        configuration.mediaTypesRequiringUserActionForPlayback = []
+        configuration.defaultWebpagePreferences = preferences
+        configuration.allowsPictureInPictureMediaPlayback = true
+        injectingScripts(in: configuration)
+        eyezonWebView = WKWebView(frame: view.bounds, configuration: configuration)
+        eyezonWebView.navigationDelegate = self
+        eyezonWebView.uiDelegate = self
+        eyezonWebView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func injectingScripts(in configuration: WKWebViewConfiguration) {
         /// For listening console events
         let script = WKUserScript(
             source: EyezonJSConstants.listeningConsoleEvents,
@@ -99,11 +118,20 @@ final class EyezonWebViewController: UIViewController {
             injectionTime: .atDocumentEnd,
             forMainFrameOnly: true
         )
-        eyezonWebView.configuration.userContentController.addUserScript(script)
-        eyezonWebView.configuration.userContentController.addUserScript(scriptZoomDisable)
-        
+        configuration.userContentController.addUserScript(script)
+        configuration.userContentController.addUserScript(scriptZoomDisable)
         /// register the bridge script that listens for the output
-        eyezonWebView.configuration.userContentController.add(self, name: "logHandler")
+        configuration.userContentController.add(self, name: "logHandler")
+    }
+}
+
+// MARK: - WKUIDelegate
+extension EyezonWebViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if let url = navigationAction.request.url {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        return nil
     }
 }
 

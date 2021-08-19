@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_implementationOnly import  SocketIO
+import SocketIO
 
 private enum Constants {
     static let DIALOG_ID_FIELD_NAME = "dialogId"
@@ -18,7 +18,7 @@ class BaseSocketServiceImpl: BaseSocketService {
     private var hasListeners = false
     private var options: SocketIOClientConfiguration {
         return SocketIOClientConfiguration(
-            arrayLiteral: .compress, .forceWebsockets(true), .forcePolling(true), .version(.two)
+            arrayLiteral: .compress, .forceWebsockets(true), .forcePolling(true), .version(.two), .log(true)
         )
     }
     private var manager: SocketManager!

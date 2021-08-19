@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 @_implementationOnly import  SwiftyJSON
 
 /// View protocol
@@ -42,6 +43,7 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     private var buttonClickedReceived = false
     private var chatJoinedReceived = false
     private let socketService = SocketServiceProvider().getInstance()
+    private var isWebViewLoaded = false
     
     // MARK: - Public properties
     weak var view: EyezonWebViewProtocol?
@@ -53,11 +55,18 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     
     // MARK: - Public methods
     func webViewLoaded() {
-        socketService.disconnect()
-        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
-            self?.view?.showError(with: "")
-            timer.invalidate()
-        })
+        if !isWebViewLoaded {
+            isWebViewLoaded = true
+            socketService.disconnect()
+            timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
+                self?.view?.showError(with: "")
+                timer.invalidate()
+            })
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            } catch { }
+        }
     }
     
     func mapConsoleEvent(_ value: Any) -> (eventName: String, eventData: [String : Any]) {
@@ -87,11 +96,29 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     
     func webViewClose() {
         socketService.connect()
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.soloAmbient)
+            try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        } catch { }
     }
     
     // MARK: - Private methods
     private func eyezonDidLoad() {
         timer?.invalidate()
         timer = nil
+        switch AVCaptureDevice.authorizationStatus(for: .audio) {
+        case .authorized: // The user has previously granted access to the camera.
+            break
+        case .notDetermined: // The user has not yet been asked for camera access.
+            AVCaptureDevice.requestAccess(for: .audio) { granted in
+                print(granted)
+            }
+        case .denied: // The user has previously denied access.
+            return
+        case .restricted: // The user can't grant access due to restrictions.
+            return
+        @unknown default:
+            return
+        }
     }
 }
