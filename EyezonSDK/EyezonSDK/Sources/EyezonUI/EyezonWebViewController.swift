@@ -12,21 +12,8 @@ final class EyezonWebViewController: UIViewController {
     
     // MARK: - Private properties
     private var eyezonWebView: WKWebView!
-    private lazy var closeButton: UIButton = {
-        let button = UIButton()
-        let bundle = Bundle(for: type(of: self))
-        button.setImage(UIImage(named: "Close", in: bundle, with: nil), for: .normal)
-        button.addTarget(self, action: #selector(self.close), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .lightGray
-        button.tintColor = .black
-        button.layer.cornerRadius = 12.0
-        return button
-    }()
     private let widgetUrl: String
-    private var observable: NSKeyValueObservation?
     private weak var broadcastReceiver: EyezonBroadcastReceiver?
-    private var popUpWebView: WKWebView?
     
     // MARK: - Public properties
     var presenter: EyezonWebViewPresenter!
@@ -66,14 +53,13 @@ final class EyezonWebViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        observable?.invalidate()
-        observable = nil
         eyezonWebView.evaluateJavaScript(EyezonJSConstants.leaveDialog)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         presenter.webViewClose()
+        eyezonWebView?.configuration.userContentController.removeScriptMessageHandler(forName: "logHandler")
     }
     
     // MARK: - Private methods
@@ -159,7 +145,10 @@ extension EyezonWebViewController: EyezonWebViewProtocol {
     func showError(with message: String) {
         let alertVC = UIAlertController(title: "unknownError".localizedFromJSON, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "ok".localizedFromJSON, style: .default, handler: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.navigationController?.popViewController(animated: true)
         })
         alertVC.addAction(okAction)
         present(alertVC, animated: true, completion: nil)
