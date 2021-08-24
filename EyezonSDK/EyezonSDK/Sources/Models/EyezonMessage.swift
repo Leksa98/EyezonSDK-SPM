@@ -20,7 +20,7 @@ public class EyezonMessage: Codable {
     let attachment: Attachment?
     let type: MessageType
     let dialog: String
-//    var voiceData: (Bool, Float, [Data]) = (false, .zero, []) !! ask about what is it
+
     var isLoading: Bool?
     var isRead: Bool
     var isDeleted: Bool
