@@ -29,6 +29,8 @@
 		F335565C26B9F5AB00F4EE39 /* SocketServiceUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */; };
 		F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */; };
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
+		F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E15F26E7AE5100D13525 /* AVFAudio.framework */; };
+		F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E16126E7AE5900D13525 /* AVFoundation.framework */; };
 		F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32EFE26BB2B580001684A /* SwiftyJSON */; };
 		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
 		F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */; };
@@ -60,6 +62,8 @@
 		F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceUs.swift; sourceTree = "<group>"; };
 		F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceProvider.swift; sourceTree = "<group>"; };
 		F335566026B9F97900F4EE39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		F346E15F26E7AE5100D13525 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFAudio.framework; sourceTree = DEVELOPER_DIR; };
+		F346E16126E7AE5900D13525 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewPresenter.swift; sourceTree = "<group>"; };
 		F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConstants.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */,
+				F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */,
 				F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */,
 				F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */,
 			);
@@ -84,6 +90,7 @@
 			children = (
 				F331808926B894F30081273D /* EyezonSDK */,
 				F331808826B894F30081273D /* Products */,
+				F346E15E26E7AE5100D13525 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,6 +189,15 @@
 				F335566026B9F97900F4EE39 /* Storage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F346E15E26E7AE5100D13525 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F346E16126E7AE5900D13525 /* AVFoundation.framework */,
+				F346E15F26E7AE5100D13525 /* AVFAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F3F4B89B26BC84A00085EE80 /* Localization */ = {
