@@ -87,6 +87,11 @@ final class EyezonWebViewController: UIViewController {
         eyezonWebView.navigationDelegate = self
         eyezonWebView.uiDelegate = self
         eyezonWebView.translatesAutoresizingMaskIntoConstraints = false
+        WKWebsiteDataStore.default().removeData(
+            ofTypes: .init(arrayLiteral: WKWebsiteDataTypeDiskCache),
+            modifiedSince: Date(timeIntervalSince1970: .zero),
+            completionHandler: { }
+        )
     }
     
     private func injectingScripts(in configuration: WKWebViewConfiguration) {
