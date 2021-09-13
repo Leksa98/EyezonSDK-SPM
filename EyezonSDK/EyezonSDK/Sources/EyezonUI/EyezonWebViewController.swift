@@ -74,14 +74,10 @@ final class EyezonWebViewController: UIViewController {
     }
     
     private func makeWebView() {
-        let preferences = WKWebpagePreferences()
-        preferences.preferredContentMode = .mobile
-        preferences.allowsContentJavaScript = true
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = true
         configuration.mediaTypesRequiringUserActionForPlayback = []
-        configuration.defaultWebpagePreferences = preferences
-        configuration.allowsPictureInPictureMediaPlayback = true
+        configuration.applicationNameForUserAgent = "Safari" //Fix for old version of WebSDK
         injectingScripts(in: configuration)
         eyezonWebView = WKWebView(frame: view.bounds, configuration: configuration)
         eyezonWebView.navigationDelegate = self
