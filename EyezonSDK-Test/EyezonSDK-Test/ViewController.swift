@@ -67,22 +67,6 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EyezonBroadcastReceiver {
-    func onNewMessage(message: EyezonMessage) {
-        print(#function)
-    }
-    
-    func onDialogCreated(dialogId: String) {
-        print(#function)
-    }
-    
-    func onDialogDeleted(dialogId: String) {
-        print(#function)
-    }
-    
-    func onDialogReturned(dialogId: String) {
-        print(#function)
-    }
-    
     func onConsoleEvent(eventName: String, event: [String: Any]) {
         print(#function, " \(eventName)")
     }
