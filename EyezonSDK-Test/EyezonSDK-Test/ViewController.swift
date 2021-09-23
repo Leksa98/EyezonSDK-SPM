@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     @objc
     private func openEyezon() {        
         Eyezon.instance.initSdk(area: selectedServer) { [weak self, predefinedData] in
-            let eyezonWebViewController = Eyezon.instance.openButton(data: predefinedData, broadcastReceiver: self)
+            let eyezonWebViewController = Eyezon.instance.openButton(data: predefinedData)
             self?.navigationController?.pushViewController(eyezonWebViewController, animated: true)
         }
     }
@@ -65,26 +65,3 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 }
-
-extension ViewController: EyezonBroadcastReceiver {
-    func onNewMessage(message: EyezonMessage) {
-        print(#function)
-    }
-    
-    func onDialogCreated(dialogId: String) {
-        print(#function)
-    }
-    
-    func onDialogDeleted(dialogId: String) {
-        print(#function)
-    }
-    
-    func onDialogReturned(dialogId: String) {
-        print(#function)
-    }
-    
-    func onConsoleEvent(eventName: String, event: [String: Any]) {
-        print(#function, " \(eventName)")
-    }
-}
-

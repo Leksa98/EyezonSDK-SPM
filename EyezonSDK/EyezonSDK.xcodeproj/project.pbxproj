@@ -13,7 +13,6 @@
 		F331809726B898180081273D /* EyezonMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809626B898180081273D /* EyezonMessage.swift */; };
 		F331809A26B899700081273D /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809926B899700081273D /* Date+Additions.swift */; };
 		F331809C26B899CE0081273D /* String+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809B26B899CE0081273D /* String+Additions.swift */; };
-		F331809F26B89C0B0081273D /* EyezonBroadcastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809E26B89C0B0081273D /* EyezonBroadcastReceiver.swift */; };
 		F33180A126B89C340081273D /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A026B89C340081273D /* Attachment.swift */; };
 		F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A226B8A1330081273D /* EyezonSDKData.swift */; };
 		F33180A826B8A3630081273D /* EyezonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A726B8A3630081273D /* EyezonWebViewController.swift */; };
@@ -39,7 +38,6 @@
 		F331809626B898180081273D /* EyezonMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonMessage.swift; sourceTree = "<group>"; };
 		F331809926B899700081273D /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		F331809B26B899CE0081273D /* String+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Additions.swift"; sourceTree = "<group>"; };
-		F331809E26B89C0B0081273D /* EyezonBroadcastReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonBroadcastReceiver.swift; sourceTree = "<group>"; };
 		F33180A026B89C340081273D /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		F33180A226B8A1330081273D /* EyezonSDKData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonSDKData.swift; sourceTree = "<group>"; };
 		F33180A726B8A3630081273D /* EyezonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				F3F4B89B26BC84A00085EE80 /* Localization */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
-				F331809D26B89BFB0081273D /* Protocols */,
 				F331809826B8995C0081273D /* Helpers */,
 				F331809526B8980E0081273D /* Models */,
 				F33180A426B8A2D80081273D /* EyezonUI */,
@@ -132,14 +129,6 @@
 				F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F331809D26B89BFB0081273D /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F331809E26B89C0B0081273D /* EyezonBroadcastReceiver.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F33180A426B8A2D80081273D /* EyezonUI */ = {
@@ -273,7 +262,6 @@
 				F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */,
 				F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */,
 				F335565626B9F53F00F4EE39 /* UrlConstants.swift in Sources */,
-				F331809F26B89C0B0081273D /* EyezonBroadcastReceiver.swift in Sources */,
 				F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */,
 				F33180A126B89C340081273D /* Attachment.swift in Sources */,
 				F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */,
