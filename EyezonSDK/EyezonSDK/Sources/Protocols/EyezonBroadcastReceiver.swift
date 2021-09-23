@@ -25,3 +25,13 @@ public protocol EyezonBroadcastReceiver: AnyObject {
     /// Event for indicating other console events
     func onConsoleEvent(eventName: String, event: [String: Any])
 }
+
+extension EyezonBroadcastReceiver {
+    func onNewMessage(message: EyezonMessage) { }
+    
+    func onDialogCreated(dialogId: String) { }
+    
+    func onDialogDeleted(dialogId: String) { }
+    
+    func onDialogReturned(dialogId: String) { }
+}

@@ -19,15 +19,7 @@
 		F33180A826B8A3630081273D /* EyezonWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A726B8A3630081273D /* EyezonWebViewController.swift */; };
 		F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33180A926B8A3A60081273D /* EyezonAssembly.swift */; };
 		F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335564926B9E58300F4EE39 /* SocketEvent.swift */; };
-		F335564D26B9E9D900F4EE39 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335564C26B9E9D900F4EE39 /* SocketService.swift */; };
-		F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = F335564F26B9EAC900F4EE39 /* SocketIO */; };
-		F335565226B9F41700F4EE39 /* BaseSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565126B9F41700F4EE39 /* BaseSocketService.swift */; };
-		F335565426B9F4F700F4EE39 /* SocketServiceSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565326B9F4F700F4EE39 /* SocketServiceSandbox.swift */; };
 		F335565626B9F53F00F4EE39 /* UrlConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565526B9F53F00F4EE39 /* UrlConstants.swift */; };
-		F335565826B9F59A00F4EE39 /* SocketServiceRu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565726B9F59A00F4EE39 /* SocketServiceRu.swift */; };
-		F335565A26B9F5A300F4EE39 /* SocketServiceEu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565926B9F5A300F4EE39 /* SocketServiceEu.swift */; };
-		F335565C26B9F5AB00F4EE39 /* SocketServiceUs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */; };
-		F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */; };
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
 		F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E15F26E7AE5100D13525 /* AVFAudio.framework */; };
 		F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E16126E7AE5900D13525 /* AVFoundation.framework */; };
@@ -53,14 +45,7 @@
 		F33180A726B8A3630081273D /* EyezonWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewController.swift; sourceTree = "<group>"; };
 		F33180A926B8A3A60081273D /* EyezonAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonAssembly.swift; sourceTree = "<group>"; };
 		F335564926B9E58300F4EE39 /* SocketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketEvent.swift; sourceTree = "<group>"; };
-		F335564C26B9E9D900F4EE39 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
-		F335565126B9F41700F4EE39 /* BaseSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSocketService.swift; sourceTree = "<group>"; };
-		F335565326B9F4F700F4EE39 /* SocketServiceSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceSandbox.swift; sourceTree = "<group>"; };
 		F335565526B9F53F00F4EE39 /* UrlConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstants.swift; sourceTree = "<group>"; };
-		F335565726B9F59A00F4EE39 /* SocketServiceRu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceRu.swift; sourceTree = "<group>"; };
-		F335565926B9F5A300F4EE39 /* SocketServiceEu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceEu.swift; sourceTree = "<group>"; };
-		F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceUs.swift; sourceTree = "<group>"; };
-		F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketServiceProvider.swift; sourceTree = "<group>"; };
 		F335566026B9F97900F4EE39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F346E15F26E7AE5100D13525 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFAudio.framework; sourceTree = DEVELOPER_DIR; };
 		F346E16126E7AE5900D13525 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -78,7 +63,6 @@
 				F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */,
 				F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */,
 				F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */,
-				F335565026B9EAC900F4EE39 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +101,6 @@
 			children = (
 				F3F4B89B26BC84A00085EE80 /* Localization */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
-				F335564B26B9E9CA00F4EE39 /* Socket */,
 				F331809D26B89BFB0081273D /* Protocols */,
 				F331809826B8995C0081273D /* Helpers */,
 				F331809526B8980E0081273D /* Models */,
@@ -155,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				F331809E26B89C0B0081273D /* EyezonBroadcastReceiver.swift */,
-				F335565126B9F41700F4EE39 /* BaseSocketService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -168,19 +150,6 @@
 				F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */,
 			);
 			path = EyezonUI;
-			sourceTree = "<group>";
-		};
-		F335564B26B9E9CA00F4EE39 /* Socket */ = {
-			isa = PBXGroup;
-			children = (
-				F335564C26B9E9D900F4EE39 /* SocketService.swift */,
-				F335565326B9F4F700F4EE39 /* SocketServiceSandbox.swift */,
-				F335565726B9F59A00F4EE39 /* SocketServiceRu.swift */,
-				F335565926B9F5A300F4EE39 /* SocketServiceEu.swift */,
-				F335565B26B9F5AB00F4EE39 /* SocketServiceUs.swift */,
-				F335565D26B9F90400F4EE39 /* SocketServiceProvider.swift */,
-			);
-			path = Socket;
 			sourceTree = "<group>";
 		};
 		F335565F26B9F96F00F4EE39 /* Storage */ = {
@@ -237,7 +206,6 @@
 			);
 			name = EyezonSDK;
 			packageProductDependencies = (
-				F335564F26B9EAC900F4EE39 /* SocketIO */,
 				F3A32EFE26BB2B580001684A /* SwiftyJSON */,
 			);
 			productName = EyezonSDK;
@@ -268,7 +236,6 @@
 			);
 			mainGroup = F331807D26B894F30081273D;
 			packageReferences = (
-				F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */,
 				F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F331808826B894F30081273D /* Products */;
@@ -300,17 +267,10 @@
 				F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */,
 				F331809A26B899700081273D /* Date+Additions.swift in Sources */,
 				F335566126B9F97900F4EE39 /* Storage.swift in Sources */,
-				F335565E26B9F90400F4EE39 /* SocketServiceProvider.swift in Sources */,
-				F335565426B9F4F700F4EE39 /* SocketServiceSandbox.swift in Sources */,
-				F335565A26B9F5A300F4EE39 /* SocketServiceEu.swift in Sources */,
 				F33180A826B8A3630081273D /* EyezonWebViewController.swift in Sources */,
 				F331809426B8964A0081273D /* EyezonSDK.swift in Sources */,
-				F335564D26B9E9D900F4EE39 /* SocketService.swift in Sources */,
 				F331809C26B899CE0081273D /* String+Additions.swift in Sources */,
 				F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */,
-				F335565C26B9F5AB00F4EE39 /* SocketServiceUs.swift in Sources */,
-				F335565226B9F41700F4EE39 /* BaseSocketService.swift in Sources */,
-				F335565826B9F59A00F4EE39 /* SocketServiceRu.swift in Sources */,
 				F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */,
 				F335565626B9F53F00F4EE39 /* UrlConstants.swift in Sources */,
 				F331809F26B89C0B0081273D /* EyezonBroadcastReceiver.swift in Sources */,
@@ -526,14 +486,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 16.0.1;
-			};
-		};
 		F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
@@ -545,11 +497,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F335564F26B9EAC900F4EE39 /* SocketIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F335564E26B9EAC900F4EE39 /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
-		};
 		F3A32EFE26BB2B580001684A /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

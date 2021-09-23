@@ -17,7 +17,6 @@ public enum ServerArea: String {
 
 public class Eyezon: NSObject {
     public static let instance = Eyezon()
-    private var socketService: BaseSocketService?
     weak var broadcastReceiver: EyezonBroadcastReceiver?
     
     private override init() {
@@ -29,7 +28,6 @@ public class Eyezon: NSObject {
         completion: @escaping () -> Void
     ) {
         _ = LocalizationService.shared
-        socketService = SocketServiceProvider().getInstance()
         Storage.shared.setCurrentServer(area)
         completion()
     }
@@ -43,7 +41,6 @@ public class Eyezon: NSObject {
     /// return UIViewController in which webView embedded
     public func openButton(data: EyezonSDKData, broadcastReceiver: EyezonBroadcastReceiver?) -> UIViewController {
         self.broadcastReceiver = broadcastReceiver
-        socketService?.broadcastReceiver = broadcastReceiver
         return EyezonAssembly.viewController(with: data, and: broadcastReceiver)
     }
 }

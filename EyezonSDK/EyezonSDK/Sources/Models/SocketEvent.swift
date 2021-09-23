@@ -7,27 +7,6 @@
 
 import Foundation
 
-protocol IncomingSocketEvent: Codable { }
-protocol OutcomingSocketEvent: Codable { }
-
-/// Incoming events
-struct DeletedDialogEvent: IncomingSocketEvent {
-    let dialogId: String
-}
-
-struct DialogReturnedEvent: IncomingSocketEvent {
-    let dialogId: String
-}
-
-struct NewMessageEvent: IncomingSocketEvent {
-    let eyezonMessage: EyezonMessage
-}
-
-/// Outcoming events
-struct EnterSocketEvent: OutcomingSocketEvent {
-    let userId: String
-}
-
 /// Analytics event
 enum AnalyticEvents {
     static let EVENT_INIT_SDK = "init_sdk"

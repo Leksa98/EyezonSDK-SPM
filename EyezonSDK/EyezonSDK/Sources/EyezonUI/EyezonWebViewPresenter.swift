@@ -42,7 +42,6 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     private var timer: Timer?
     private var buttonClickedReceived = false
     private var chatJoinedReceived = false
-    private let socketService = SocketServiceProvider().getInstance()
     private var isWebViewLoaded = false
     
     // MARK: - Public properties
@@ -57,7 +56,6 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     func webViewLoaded() {
         if !isWebViewLoaded {
             isWebViewLoaded = true
-            socketService.disconnect()
             timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
                 self?.view?.showError(with: "")
                 timer.invalidate()
@@ -95,7 +93,6 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     }
     
     func webViewClose() {
-        socketService.connect()
         do {
             try AVAudioSession.sharedInstance().setCategory(.soloAmbient)
             try AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
