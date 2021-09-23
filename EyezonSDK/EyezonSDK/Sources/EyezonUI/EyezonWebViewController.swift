@@ -13,6 +13,7 @@ final class EyezonWebViewController: UIViewController {
     // MARK: - Private properties
     private var eyezonWebView: WKWebView!
     private let widgetUrl: String
+    private weak var broadcastReceiver: EyezonBroadcastReceiver?
     
     // MARK: - Public properties
     var presenter: EyezonWebViewPresenter!
@@ -20,9 +21,11 @@ final class EyezonWebViewController: UIViewController {
     // MARK: - Lifecycle
     
     init(
-        widgetUrl: String
+        widgetUrl: String,
+        broadcastReceiver: EyezonBroadcastReceiver?
     ) {
         self.widgetUrl = widgetUrl
+        self.broadcastReceiver = broadcastReceiver
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -130,7 +133,11 @@ extension EyezonWebViewController: WKNavigationDelegate {
 // MARK: - WKScriptMessageHandler
 extension EyezonWebViewController: WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
+        let (eventName, eventDictionary) = presenter.mapConsoleEvent(message.body)
+        guard !eventName.isEmpty, !eventDictionary.isEmpty else {
+            return
+        }
+        broadcastReceiver?.onConsoleEvent(eventName: eventName, event: eventDictionary)
     }
 }
 

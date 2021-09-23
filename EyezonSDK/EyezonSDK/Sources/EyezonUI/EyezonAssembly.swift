@@ -12,9 +12,10 @@ import WebKit
 final class EyezonAssembly {
     
     static func viewController(
-        with data: EyezonSDKData
+        with data: EyezonSDKData,
+        and broadcastReceiver: EyezonBroadcastReceiver?
     ) -> UIViewController {
-        let viewController = EyezonWebViewController(widgetUrl: data.validUrl)
+        let viewController = EyezonWebViewController(widgetUrl: data.validUrl, broadcastReceiver: broadcastReceiver)
         let presenter = EyezonWebViewPresenterImpl(with: viewController)
         viewController.presenter = presenter
         return viewController

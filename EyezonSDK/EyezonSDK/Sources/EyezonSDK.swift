@@ -17,6 +17,7 @@ public enum ServerArea: String {
 
 public class Eyezon: NSObject {
     public static let instance = Eyezon()
+    weak var broadcastReceiver: EyezonBroadcastReceiver?
     
     private override init() {
         super.init()
@@ -38,7 +39,8 @@ public class Eyezon: NSObject {
     
     /// Method for opening EyezonWebView
     /// return UIViewController in which webView embedded
-    public func openButton(data: EyezonSDKData) -> UIViewController {
-        return EyezonAssembly.viewController(with: data)
+    public func openButton(data: EyezonSDKData, broadcastReceiver: EyezonBroadcastReceiver?) -> UIViewController {
+        self.broadcastReceiver = broadcastReceiver
+        return EyezonAssembly.viewController(with: data, and: broadcastReceiver)
     }
 }
