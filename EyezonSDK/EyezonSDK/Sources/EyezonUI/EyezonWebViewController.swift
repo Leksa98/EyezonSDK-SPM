@@ -14,6 +14,9 @@ final class EyezonWebViewController: UIViewController {
     private var eyezonWebView: WKWebView!
     private let widgetUrl: String
     private weak var broadcastReceiver: EyezonBroadcastReceiver?
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        [eyezonWebView]
+    }
     
     // MARK: - Public properties
     var presenter: EyezonWebViewPresenter!
@@ -153,5 +156,14 @@ extension EyezonWebViewController: EyezonWebViewProtocol {
         })
         alertVC.addAction(okAction)
         present(alertVC, animated: true, completion: nil)
+    }
+    
+    func willEnterForeground() {
+        setNeedsFocusUpdate()
+        updateFocusIfNeeded()
+    }
+    
+    func didEnterBackground() {
+        eyezonWebView.evaluateJavaScript(EyezonJSConstants.leaveDialog)
     }
 }

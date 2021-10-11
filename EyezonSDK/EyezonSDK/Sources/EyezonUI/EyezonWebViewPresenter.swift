@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 import AVFoundation
 @_implementationOnly import  SwiftyJSON
 
@@ -13,6 +14,8 @@ import AVFoundation
 protocol EyezonWebViewProtocol: AnyObject {
     /// Calling if timer was ended and needed events wasn't received
     func showError(with message: String)
+    func willEnterForeground()
+    func didEnterBackground()
 }
 
 /// Presenter protocol
@@ -50,6 +53,12 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     // MARK: - Lifecycle
     init(with view: EyezonWebViewProtocol) {
         self.view = view
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground),
+                                               name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
+                                               name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
+                                               name: UIApplication.willTerminateNotification, object: nil)
     }
     
     // MARK: - Public methods
@@ -117,5 +126,15 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
         @unknown default:
             return
         }
+    }
+    
+    @objc
+    private func willEnterForeground() {
+        view?.willEnterForeground()
+    }
+    
+    @objc
+    private func didEnterBackground() {
+        view?.didEnterBackground()
     }
 }
