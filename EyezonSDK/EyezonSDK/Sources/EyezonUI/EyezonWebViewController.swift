@@ -53,13 +53,15 @@ final class EyezonWebViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        eyezonWebView.evaluateJavaScript(EyezonJSConstants.leaveDialog)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        presenter.webViewClose()
-        eyezonWebView?.configuration.userContentController.removeScriptMessageHandler(forName: "logHandler")
+        eyezonWebView.evaluateJavaScript(EyezonJSConstants.leaveDialog)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.presenter.webViewClose()
+            self.eyezonWebView?.configuration.userContentController.removeScriptMessageHandler(forName: "logHandler")
+        }
     }
     
     // MARK: - Private methods

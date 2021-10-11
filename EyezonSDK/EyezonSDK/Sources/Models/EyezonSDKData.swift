@@ -18,7 +18,7 @@ public class EyezonSDKData {
     
     var validUrl: String {
         var validUrlString = "\(widgetUrl ?? UrlConstants.DEFAULT_WIDGET_URL)&businessId=\(businessId)&buttonId=\(buttonId)&application=\(application)"
-        validUrlString.safeAppendToUrl(apnsToken, fieldName: "apnsToken")
+        validUrlString.safeAppendToUrl(apnsToken, fieldName: "apnToken")
         return validUrlString
     }
     

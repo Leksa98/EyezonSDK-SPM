@@ -14,7 +14,7 @@ final class Storage {
         case eyezonAuthToken
         case eyezonClientId
         case eyezonCurrentServer
-        case eyezonFCMToken
+        case eyezonAPNSToken
     }
     
     static let shared = Storage()
@@ -36,7 +36,7 @@ final class Storage {
     }
     
     func setAPNSToken(_ value: String) {
-        userDefaults.set(value, forKey: Keys.eyezonFCMToken.rawValue)
+        userDefaults.set(value, forKey: Keys.eyezonAPNSToken.rawValue)
     }
     
     func getAuthToken() -> String {
@@ -53,6 +53,6 @@ final class Storage {
     }
     
     func getAPNSToken() -> String? {
-        return userDefaults.string(forKey: Keys.eyezonFCMToken.rawValue)
+        return userDefaults.string(forKey: Keys.eyezonAPNSToken.rawValue)
     }
 }
