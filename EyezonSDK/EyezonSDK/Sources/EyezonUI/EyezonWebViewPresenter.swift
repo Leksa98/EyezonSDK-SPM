@@ -49,7 +49,7 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     
     // MARK: - Public properties
     weak var view: EyezonWebViewProtocol?
-
+    
     // MARK: - Lifecycle
     init(with view: EyezonWebViewProtocol) {
         self.view = view
@@ -83,15 +83,15 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
         let json = JSON(parseJSON: bodyString)
         guard let eventName = json.array?[safe: 0]?.string,
               let eventDictionary = json.array?[safe: 1]?.dictionaryObject else {
-            return emptyTuple
-        }
+                  return emptyTuple
+              }
         if eventName == NeededEvents.buttonClicked.rawValue {
             buttonClickedReceived = true
         } else if eventName == NeededEvents.chatJoined.rawValue {
             chatJoinedReceived = true
         }
         if let data = try? json.array?[safe: 1]?.rawData(),
-            let knownClient = try? JSONDecoder().decode(KnownClient.self, from: data) {
+           let knownClient = try? JSONDecoder().decode(KnownClient.self, from: data) {
             Storage.shared.setClientId(knownClient.eyezonClientId)
         }
         if buttonClickedReceived && chatJoinedReceived && timer != nil {
