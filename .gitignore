@@ -95,4 +95,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 EyezonSDK/build/*
+Pods/
 

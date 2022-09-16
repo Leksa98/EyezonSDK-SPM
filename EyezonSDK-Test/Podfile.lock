@@ -1,0 +1,24 @@
+PODS:
+  - EyezonSDK (1.0.4):
+    - lottie-ios
+    - SwiftyJSON
+  - lottie-ios (3.4.3)
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - EyezonSDK
+
+SPEC REPOS:
+  trunk:
+    - EyezonSDK
+    - lottie-ios
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  EyezonSDK: 600caff0d786543f691674d807f35b4aa7a6b6b5
+  lottie-ios: 9ae750cdc7820fecbd3c2f0cfc493038208fcdc4
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: bfbcedd4bc77ea5191735731487fc64ecede9ed9
+
+COCOAPODS: 1.11.3

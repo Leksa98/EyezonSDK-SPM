@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EyezonSDK"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "EyezonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -29,28 +29,9 @@ Pod::Spec.new do |spec|
   DESC
 
   spec.homepage     = "https://github.com/Eyezonteam/ios-sdk"
-
-  # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Licensing your code is important. See https://choosealicense.com for more info.
-  #  CocoaPods will detect a license file if there is a named LICENSE*
-  #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
-  #
-
+  
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
-
-
-  # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Specify the authors of the library, with email addresses. Email addresses
-  #  of the authors are extracted from the SCM log. E.g. $ git log. CocoaPods also
-  #  accepts just a name if you'd rather not provide an email address.
-  #
-  #  Specify a social_media_url where others can refer to, for example a twitter
-  #  profile URL.
-  #
-
-  spec.author             = "Denis Borodavchenko"
+  spec.author             = { "Developer" => "ourmailforapi@gmail.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
