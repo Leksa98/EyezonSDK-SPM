@@ -23,8 +23,10 @@
 		F335566126B9F97900F4EE39 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F335566026B9F97900F4EE39 /* Storage.swift */; };
 		F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E15F26E7AE5100D13525 /* AVFAudio.framework */; };
 		F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F346E16126E7AE5900D13525 /* AVFoundation.framework */; };
-		F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3A32EFE26BB2B580001684A /* SwiftyJSON */; };
+		F37FDD232774F52200D7DBF4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FDD222774F52200D7DBF4 /* APIService.swift */; };
 		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
+		F3F005D128CF8D880070CC92 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F005D028CF8D880070CC92 /* Resources.swift */; };
+		F3F005D728CF90CE0070CC92 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3F005D628CF90CE0070CC92 /* SwiftyJSON */; };
 		F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */; };
 		F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */; };
 		F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */; };
@@ -49,7 +51,9 @@
 		F335566026B9F97900F4EE39 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F346E15F26E7AE5100D13525 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFAudio.framework; sourceTree = DEVELOPER_DIR; };
 		F346E16126E7AE5900D13525 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		F37FDD222774F52200D7DBF4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonWebViewPresenter.swift; sourceTree = "<group>"; };
+		F3F005D028CF8D880070CC92 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushConstants.swift; sourceTree = "<group>"; };
 		F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyezonJSConstants.swift; sourceTree = "<group>"; };
@@ -62,7 +66,7 @@
 			files = (
 				F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */,
 				F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */,
-				F3A32EFF26BB2B580001684A /* SwiftyJSON in Frameworks */,
+				F3F005D728CF90CE0070CC92 /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +103,7 @@
 		F331809226B895C60081273D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F3F005CB28CF8AFF0070CC92 /* Resources */,
 				F3F4B89B26BC84A00085EE80 /* Localization */,
 				F335565F26B9F96F00F4EE39 /* Storage */,
 				F331809D26B89BFB0081273D /* Protocols */,
@@ -130,6 +135,7 @@
 				F335565526B9F53F00F4EE39 /* UrlConstants.swift */,
 				F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */,
 				F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */,
+				F37FDD222774F52200D7DBF4 /* APIService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -169,6 +175,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F3F005CB28CF8AFF0070CC92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F3F005D028CF8D880070CC92 /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F3F4B89B26BC84A00085EE80 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,7 +220,7 @@
 			);
 			name = EyezonSDK;
 			packageProductDependencies = (
-				F3A32EFE26BB2B580001684A /* SwiftyJSON */,
+				F3F005D628CF90CE0070CC92 /* SwiftyJSON */,
 			);
 			productName = EyezonSDK;
 			productReference = F331808726B894F30081273D /* EyezonSDK.framework */;
@@ -236,7 +250,8 @@
 			);
 			mainGroup = F331807D26B894F30081273D;
 			packageReferences = (
-				F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F3F005D228CF90530070CC92 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F331808826B894F30081273D /* Products */;
 			projectDirPath = "";
@@ -265,6 +280,7 @@
 			files = (
 				F33180A326B8A1330081273D /* EyezonSDKData.swift in Sources */,
 				F33180AA26B8A3A60081273D /* EyezonAssembly.swift in Sources */,
+				F37FDD232774F52200D7DBF4 /* APIService.swift in Sources */,
 				F331809A26B899700081273D /* Date+Additions.swift in Sources */,
 				F335566126B9F97900F4EE39 /* Storage.swift in Sources */,
 				F33180A826B8A3630081273D /* EyezonWebViewController.swift in Sources */,
@@ -277,6 +293,7 @@
 				F335564A26B9E58300F4EE39 /* SocketEvent.swift in Sources */,
 				F33180A126B89C340081273D /* Attachment.swift in Sources */,
 				F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */,
+				F3F005D128CF8D880070CC92 /* Resources.swift in Sources */,
 				F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */,
 				F331809726B898180081273D /* EyezonMessage.swift in Sources */,
 			);
@@ -413,6 +430,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JA2M8SY5S4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -426,6 +444,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "-ObjC  ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -442,6 +461,7 @@
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = JA2M8SY5S4;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -455,6 +475,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = "-ObjC  ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyezon.sdk;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -488,20 +509,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+		F3F005D228CF90530070CC92 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				minimumVersion = 3.0.0;
+			};
+		};
+		F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F3A32EFE26BB2B580001684A /* SwiftyJSON */ = {
+		F3F005D628CF90CE0070CC92 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F3A32EFD26BB2B580001684A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			package = F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */

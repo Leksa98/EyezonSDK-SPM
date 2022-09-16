@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
         self.pushToken = tokenString
+        Eyezon.instance.initMessaging(apnsData: deviceToken)
         print("Device Token: \(tokenString)")
     }
     

@@ -86,6 +86,7 @@ fastlane/test_output
 .idea/
 .DS_Store
 .sync/
+*.p8
 
 # Code Injection
 #
@@ -94,3 +95,4 @@ fastlane/test_output
 
 iOSInjectionProject/
 EyezonSDK/build/*
+

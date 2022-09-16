@@ -14,6 +14,7 @@ import AVFoundation
 protocol EyezonWebViewProtocol: AnyObject {
     /// Calling if timer was ended and needed events wasn't received
     func showError(with message: String)
+    func showComplete(with message: String)
     func willEnterForeground()
     func didEnterBackground()
 }
@@ -54,18 +55,18 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     init(with view: EyezonWebViewProtocol) {
         self.view = view
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground),
-                                               name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
-                                               name: UIApplication.didEnterBackgroundNotification, object: nil)
+                                               name: UIApplication.didBecomeActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
                                                name: UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground),
+                                               name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     // MARK: - Public methods
     func webViewLoaded() {
         if !isWebViewLoaded {
             isWebViewLoaded = true
-            timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [weak self] timer in
+            timer = Timer.scheduledTimer(withTimeInterval: 15.0, repeats: false, block: { [weak self] timer in
                 self?.view?.showError(with: "")
                 timer.invalidate()
             })
@@ -83,8 +84,8 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
         let json = JSON(parseJSON: bodyString)
         guard let eventName = json.array?[safe: 0]?.string,
               let eventDictionary = json.array?[safe: 1]?.dictionaryObject else {
-                  return emptyTuple
-              }
+            return emptyTuple
+        }
         if eventName == NeededEvents.buttonClicked.rawValue {
             buttonClickedReceived = true
         } else if eventName == NeededEvents.chatJoined.rawValue {
@@ -94,7 +95,7 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
            let knownClient = try? JSONDecoder().decode(KnownClient.self, from: data) {
             Storage.shared.setClientId(knownClient.eyezonClientId)
         }
-        if buttonClickedReceived && chatJoinedReceived && timer != nil {
+        if buttonClickedReceived && timer != nil {// && chatJoinedReceived {
             /// Needed events received then we need stop timer
             eyezonDidLoad()
         }
