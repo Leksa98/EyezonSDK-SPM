@@ -6,11 +6,47 @@
 //
 
 import Foundation
+import UIKit
+
+public class EyezonSDKInterfaceBuilder {
+    
+    let isNavigationController: Bool?
+    
+    let navBarBackgroundColor: UIColor?
+    
+    let navBarTitleText: String?
+    let navBarTitleColor: UIColor?
+    
+    let navBarBackButtonText: String?
+    let navBarBackButtonColor: UIColor?
+    
+    let navBarBackButtonLeftPosition: Bool?
+    
+    public init(
+        isNavigationController: Bool? = false,
+        navBarBackgroundColor: UIColor? = UIColor.white,
+        navBarTitleText: String? = "Eyezon",
+        navBarTitleColor: UIColor? = UIColor(red: 1.00, green: 0.18, blue: 0.33, alpha: 1.00),
+        navBarBackButtonText: String? = "Back",
+        navBarBackButtonColor: UIColor? = UIColor(red: 1.00, green: 0.18, blue: 0.33, alpha: 1.00),
+        navBarBackButtonLeftPosition: Bool? = true
+    ) {
+        self.isNavigationController = isNavigationController
+        self.navBarBackgroundColor = navBarBackgroundColor
+        self.navBarTitleText = navBarTitleText
+        self.navBarTitleColor = navBarTitleColor
+        self.navBarBackButtonText = navBarBackButtonText
+        self.navBarBackButtonColor = navBarBackButtonColor
+        self.navBarBackButtonLeftPosition = navBarBackButtonLeftPosition
+    }
+}
+
 
 public class EyezonSDKData {
     let businessId: String
     let buttonId: String
     let widgetUrl: String?
+    
     private var apnsToken: String? {
         Storage.shared.getAPNSToken()
     }

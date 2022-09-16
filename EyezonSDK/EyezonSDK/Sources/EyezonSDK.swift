@@ -16,6 +16,8 @@ public enum ServerArea: String {
 }
 
 public class Eyezon: NSObject {
+    private var clientId: String?
+    
     public static let instance = Eyezon()
     weak var broadcastReceiver: EyezonBroadcastReceiver?
     
@@ -39,8 +41,21 @@ public class Eyezon: NSObject {
     
     /// Method for opening EyezonWebView
     /// return UIViewController in which webView embedded
-    public func openButton(data: EyezonSDKData, broadcastReceiver: EyezonBroadcastReceiver?) -> UIViewController {
+    public func openButton(data: EyezonSDKData, interfaceBuilder: EyezonSDKInterfaceBuilder, broadcastReceiver: EyezonBroadcastReceiver?) -> UIViewController {
         self.broadcastReceiver = broadcastReceiver
-        return EyezonAssembly.viewController(with: data, and: broadcastReceiver)
+        self.clientId = data.buttonId
+        return EyezonAssembly.viewController(with: data, and: interfaceBuilder, and: broadcastReceiver)
+    }
+    
+    public func logout(
+        completion: @escaping (_ logout: Bool, _ error: Error?) -> Void
+    ) {
+        ApiService.logout { logout, error in
+            guard error == nil else {
+                completion(false, error)
+                return
+            }
+            completion(logout, nil)
+        }
     }
 }
