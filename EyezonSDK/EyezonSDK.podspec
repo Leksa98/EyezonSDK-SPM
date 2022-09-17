@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "EyezonSDK"
-  spec.version      = "1.0.6"
+  spec.version      = "1.0.5"
   spec.summary      = "EyezonSDK."
 
   # This description is used to generate tags and improve search results.
@@ -53,5 +53,6 @@ Pod::Spec.new do |spec|
   spec.xcconfig     = { 'SWIFT_VERSION' => '5.6' }
   spec.dependency "SwiftyJSON"
   spec.dependency "lottie-ios"
+  spec.resources = "EyezonSDK/**/*.xcassets"
 
 end

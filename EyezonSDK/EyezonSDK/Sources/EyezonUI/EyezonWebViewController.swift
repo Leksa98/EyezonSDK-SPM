@@ -192,7 +192,7 @@ final class EyezonWebViewController: UIViewController {
         view.backgroundColor = .white
         makeWebView()
         view.addSubview(eyezonWebView)
-         view.addSubview(loadingView)
+        view.addSubview(loadingView)
     }
     
     @objc func closeAction(sender: UIButton!) {
@@ -326,7 +326,7 @@ final class EyezonWebViewController: UIViewController {
     }
     
     private func loading(show: Bool) {
-        // loadingView.isHidden = !show
+        loadingView.isHidden = !show
     }
 }
 
