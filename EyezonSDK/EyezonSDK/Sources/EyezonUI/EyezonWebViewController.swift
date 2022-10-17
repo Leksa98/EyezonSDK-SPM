@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-// @_implementationOnly import Lottie
+import Lottie
 
 enum ButtonPosition {
     case right
@@ -18,30 +18,30 @@ final class EyezonWebViewController: UIViewController {
     
     // MARK: - Private properties
     private var eyezonWebView: WKWebView!
-//    private lazy var loadingView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = UIColor.white
-//        view.addSubview(loaderView)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        view.isHidden = true
-//        return view
-//    }()
-//    private lazy var loaderView: AnimationView = {
-//        let bundle = Bundle.allFrameworks.filter({ NSDataAsset(name: "loader", bundle: $0) != nil }).first ?? Bundle.main
-//        let view = AnimationView(
-//            asset: Resources.Files.loaderAnimation,
-//            bundle: bundle,
-//            imageProvider: nil,
-//            animationCache: nil,
-//            configuration: .shared
-//        )
-//        view.contentMode = .scaleAspectFit
-//        view.loopMode = .loop
-//        view.play()
-//        view.tintColor = UIColor(red: 255.0 / 255.0, green: 45.0 / 255.0, blue: 85 / 255.0, alpha: 1.0)
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+    private lazy var loadingView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        view.addSubview(loaderView)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    private lazy var loaderView: AnimationView = {
+        let bundle = Bundle.allFrameworks.filter({ NSDataAsset(name: "loader", bundle: $0) != nil }).first ?? Bundle.main
+        let view = AnimationView(
+            asset: Resources.Files.loaderAnimation,
+            bundle: bundle,
+            imageProvider: nil,
+            animationCache: nil,
+            configuration: .shared
+        )
+        view.contentMode = .scaleAspectFit
+        view.loopMode = .loop
+        view.play()
+        view.tintColor = UIColor(red: 255.0 / 255.0, green: 45.0 / 255.0, blue: 85 / 255.0, alpha: 1.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     let navView = UIView()
     let seperatorView = UIView()
@@ -192,7 +192,7 @@ final class EyezonWebViewController: UIViewController {
         view.backgroundColor = .white
         makeWebView()
         view.addSubview(eyezonWebView)
-        // view.addSubview(loadingView)
+        view.addSubview(loadingView)
     }
     
     @objc func closeAction(sender: UIButton!) {
@@ -255,16 +255,16 @@ final class EyezonWebViewController: UIViewController {
             ]
             NSLayoutConstraint.activate(webViewConstraints)
             
-//            let loadingViewConstraints = [
-//                loadingView.topAnchor.constraint(equalTo: navView.bottomAnchor),
-//                loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//                loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//
-//                loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
-//                loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
-//            ]
-//            NSLayoutConstraint.activate(loadingViewConstraints)
+            let loadingViewConstraints = [
+                loadingView.topAnchor.constraint(equalTo: navView.bottomAnchor),
+                loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+                loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
+                loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
+            ]
+            NSLayoutConstraint.activate(loadingViewConstraints)
         } else {
             let webViewNCConstraints = [
                 eyezonWebView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -274,16 +274,16 @@ final class EyezonWebViewController: UIViewController {
             ]
             NSLayoutConstraint.activate(webViewNCConstraints)
             
-//            let loadingViewNCConstraints = [
-//                loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//                loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//                loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//                loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//
-//                loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
-//                loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
-//            ]
-//            NSLayoutConstraint.activate(loadingViewNCConstraints)
+            let loadingViewNCConstraints = [
+                loadingView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+
+                loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
+                loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
+            ]
+            NSLayoutConstraint.activate(loadingViewNCConstraints)
         }
     }
     
@@ -326,7 +326,7 @@ final class EyezonWebViewController: UIViewController {
     }
     
     private func loading(show: Bool) {
-        // loadingView.isHidden = !show
+        loadingView.isHidden = !show
     }
 }
 

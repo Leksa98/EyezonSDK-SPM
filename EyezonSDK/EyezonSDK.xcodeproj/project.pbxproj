@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D869A4A5384E40F0F2F7CF2 /* Pods_EyezonSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B4D2C9DE92209F469EBB83 /* Pods_EyezonSDK.framework */; };
 		F31ED00226CD0DF300CC1B1B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F31ED00126CD0DF300CC1B1B /* Media.xcassets */; };
 		F331808C26B894F30081273D /* EyezonSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = F331808A26B894F30081273D /* EyezonSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F331809426B8964A0081273D /* EyezonSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = F331809326B8964A0081273D /* EyezonSDK.swift */; };
@@ -26,13 +27,15 @@
 		F37FDD232774F52200D7DBF4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37FDD222774F52200D7DBF4 /* APIService.swift */; };
 		F3A32F0226BB37E70001684A /* EyezonWebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A32F0126BB37E70001684A /* EyezonWebViewPresenter.swift */; };
 		F3F005D128CF8D880070CC92 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F005D028CF8D880070CC92 /* Resources.swift */; };
-		F3F005D728CF90CE0070CC92 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F3F005D628CF90CE0070CC92 /* SwiftyJSON */; };
 		F3F4B89D26BC84AD0085EE80 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89C26BC84AD0085EE80 /* LocalizationService.swift */; };
 		F3F4B89F26BC85CE0085EE80 /* PushConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B89E26BC85CE0085EE80 /* PushConstants.swift */; };
 		F3F4B8A926BC9BD50085EE80 /* EyezonJSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F4B8A826BC9BD50085EE80 /* EyezonJSConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17D97E66B5F487D565BA40BD /* Pods-EyezonSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyezonSDK.release.xcconfig"; path = "Target Support Files/Pods-EyezonSDK/Pods-EyezonSDK.release.xcconfig"; sourceTree = "<group>"; };
+		49B4D2C9DE92209F469EBB83 /* Pods_EyezonSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EyezonSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F0F468C767AC29157A87E1 /* Pods-EyezonSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyezonSDK.debug.xcconfig"; path = "Target Support Files/Pods-EyezonSDK/Pods-EyezonSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		F31ED00126CD0DF300CC1B1B /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		F331808726B894F30081273D /* EyezonSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EyezonSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F331808A26B894F30081273D /* EyezonSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EyezonSDK.h; sourceTree = "<group>"; };
@@ -66,7 +69,7 @@
 			files = (
 				F346E16226E7AE5900D13525 /* AVFoundation.framework in Frameworks */,
 				F346E16026E7AE5100D13525 /* AVFAudio.framework in Frameworks */,
-				F3F005D728CF90CE0070CC92 /* SwiftyJSON in Frameworks */,
+				4D869A4A5384E40F0F2F7CF2 /* Pods_EyezonSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +82,7 @@
 				F331808926B894F30081273D /* EyezonSDK */,
 				F331808826B894F30081273D /* Products */,
 				F346E15E26E7AE5100D13525 /* Frameworks */,
+				F485A1518AF9C1FC963648C6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +175,7 @@
 			children = (
 				F346E16126E7AE5900D13525 /* AVFoundation.framework */,
 				F346E15F26E7AE5100D13525 /* AVFAudio.framework */,
+				49B4D2C9DE92209F469EBB83 /* Pods_EyezonSDK.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,6 +196,15 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		F485A1518AF9C1FC963648C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57F0F468C767AC29157A87E1 /* Pods-EyezonSDK.debug.xcconfig */,
+				17D97E66B5F487D565BA40BD /* Pods-EyezonSDK.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -209,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F331808F26B894F30081273D /* Build configuration list for PBXNativeTarget "EyezonSDK" */;
 			buildPhases = (
+				C37A6BCBCF8B63A9DF5A8B22 /* [CP] Check Pods Manifest.lock */,
 				F331808226B894F30081273D /* Headers */,
 				F331808326B894F30081273D /* Sources */,
 				F331808426B894F30081273D /* Frameworks */,
@@ -220,7 +235,6 @@
 			);
 			name = EyezonSDK;
 			packageProductDependencies = (
-				F3F005D628CF90CE0070CC92 /* SwiftyJSON */,
 			);
 			productName = EyezonSDK;
 			productReference = F331808726B894F30081273D /* EyezonSDK.framework */;
@@ -250,8 +264,6 @@
 			);
 			mainGroup = F331807D26B894F30081273D;
 			packageReferences = (
-				F3F005D228CF90530070CC92 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = F331808826B894F30081273D /* Products */;
 			projectDirPath = "";
@@ -272,6 +284,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C37A6BCBCF8B63A9DF5A8B22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EyezonSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F331808326B894F30081273D /* Sources */ = {
@@ -426,6 +463,7 @@
 		};
 		F331809026B894F30081273D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57F0F468C767AC29157A87E1 /* Pods-EyezonSDK.debug.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -457,6 +495,7 @@
 		};
 		F331809126B894F30081273D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17D97E66B5F487D565BA40BD /* Pods-EyezonSDK.release.xcconfig */;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -507,33 +546,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F3F005D228CF90530070CC92 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.0.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F3F005D628CF90CE0070CC92 /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F3F005D528CF90CE0070CC92 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F331807E26B894F30081273D /* Project object */;
 }
