@@ -113,20 +113,6 @@ final class EyezonWebViewPresenterImpl: EyezonWebViewPresenter {
     private func eyezonDidLoad() {
         timer?.invalidate()
         timer = nil
-        switch AVCaptureDevice.authorizationStatus(for: .audio) {
-        case .authorized: // The user has previously granted access to the camera.
-            break
-        case .notDetermined: // The user has not yet been asked for camera access.
-            AVCaptureDevice.requestAccess(for: .audio) { granted in
-                print(granted)
-            }
-        case .denied: // The user has previously denied access.
-            return
-        case .restricted: // The user can't grant access due to restrictions.
-            return
-        @unknown default:
-            return
-        }
     }
     
     @objc
