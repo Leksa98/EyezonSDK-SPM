@@ -1,5 +1,5 @@
 PODS:
-  - EyezonSDK (1.0.5):
+  - EyezonSDK (1.0.7):
     - lottie-ios
     - SwiftyJSON
   - lottie-ios (3.5.0)
@@ -15,7 +15,7 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  EyezonSDK: 0e4dde3acdeec23dc779af5ffd89c04bb3a2ed20
+  EyezonSDK: 8de0adf0332ea41e1b7f44648541a3b99efde424
   lottie-ios: c55158d67d0629a260625cc2ded2052b829e3c3e
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
