@@ -26,9 +26,9 @@ final class EyezonWebViewController: UIViewController {
         view.isHidden = true
         return view
     }()
-    private lazy var loaderView: AnimationView = {
+    private lazy var loaderView: LottieAnimationView = {
         let bundle = Bundle.allFrameworks.filter({ NSDataAsset(name: "loader", bundle: $0) != nil }).first ?? Bundle.main
-        let view = AnimationView(
+        let view = LottieAnimationView(
             asset: Resources.Files.loaderAnimation,
             bundle: bundle,
             imageProvider: nil,
@@ -260,7 +260,7 @@ final class EyezonWebViewController: UIViewController {
                 loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
+                
                 loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
                 loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
             ]
@@ -279,7 +279,7 @@ final class EyezonWebViewController: UIViewController {
                 loadingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
                 loadingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
                 loadingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
+                
                 loaderView.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor),
                 loaderView.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor)
             ]
@@ -362,7 +362,9 @@ extension EyezonWebViewController: WKScriptMessageHandler {
         // guard !eventName.isEmpty, !eventDictionary.isEmpty else { return }
         
         if eventName == "BUTTON_CLICKED" {
-            loading(show: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.loading(show: false)
+            }
         }
         broadcastReceiver?.onConsoleEvent(eventName: eventName, event: eventDictionary)
     }
