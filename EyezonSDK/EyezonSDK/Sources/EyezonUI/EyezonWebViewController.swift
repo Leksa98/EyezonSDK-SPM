@@ -361,7 +361,7 @@ extension EyezonWebViewController: WKScriptMessageHandler {
         // Discard some event's
         // guard !eventName.isEmpty, !eventDictionary.isEmpty else { return }
         
-        if eventName == "CHAT_JOINED" {
+        if eventName == "BUTTON_CLICKED" {
             loading(show: false)
         }
         broadcastReceiver?.onConsoleEvent(eventName: eventName, event: eventDictionary)
