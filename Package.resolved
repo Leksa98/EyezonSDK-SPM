@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "swiftsvg",
+      "identity" : "swiftyjson",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mchoe/SwiftSVG.git",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
       "state" : {
-        "revision" : "c3a8866a25ace169ee8e5c037670ba14aa59606f",
-        "version" : "2.3.2"
+        "revision" : "2b6054efa051565954e1d2b9da831680026cd768",
+        "version" : "4.3.0"
       }
     }
   ],

@@ -13,7 +13,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.2.0"),
-		.package(url: "https://github.com/mchoe/SwiftSVG.git", exact: "2.3.2"),
+		.package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "4.0.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,7 +22,7 @@ let package = Package(
             name: "EyezonSDK",
 			dependencies: [
 				.product(name: "Lottie", package: "lottie-ios"),
-				.product(name: "SwiftSVG", package: "SwiftSVG"),
+				.product(name: "SwiftyJSON", package: "SwiftyJSON"),
 			])
     ]
 )
