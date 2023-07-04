@@ -20,6 +20,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "EyezonSDK",
-			dependencies: [])
+			dependencies: [
+				.product(name: "Lottie", package: "lottie-ios"),
+				.product(name: "SwiftSVG", package: "SwiftSVG"),
+			])
     ]
 )
