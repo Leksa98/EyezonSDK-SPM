@@ -12,7 +12,7 @@ let package = Package(
             targets: ["EyezonSDK"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.2.0"),
+        .package(url: "https://github.com/airbnb/lottie-ios.git", exact: "4.4.1"),
 		.package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", from: "4.0.0"),
     ],
     targets: [
